@@ -210,19 +210,19 @@ public class Complex{
     */
     public String toString() {
         if (r!=0 && i>0) {
-            return r+" + "+i+"i";
+            return r+"+i*"+i;
         }
         if (r!=0 && i<0) {
-            return r+" - "+(-i)+"i";
+            return r+"-i*"+(-i);
         }
         if (i==0) {
             return String.valueOf(r);
         }
         if (r==0) {
-            return i+"i";
+            return "i*"+i;
         }
         // shouldn't get here (unless Inf or NaN)
-        return r+" + i*"+i;
+        return r+"+i*"+i;
         
     }       
 }

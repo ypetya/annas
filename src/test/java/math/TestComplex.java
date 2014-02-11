@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import annas.math.Complex;
+import org.junit.Assert;
+import org.junit.Ignore;
 
 public class TestComplex {
 
@@ -112,46 +114,55 @@ public class TestComplex {
 		assertTrue(e.real() == (20d / 8d) && e.imag() == (-16d / 8d));
 	}
 
+        @Ignore
 	@Test
 	public void testExp() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testLog() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testSqrt() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testSin() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testCos() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testSinh() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testCosh() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testTan() {
 		fail("Not yet implemented");
 	}
 
+        @Ignore
 	@Test
 	public void testChs() {
 		fail("Not yet implemented");
@@ -159,7 +170,15 @@ public class TestComplex {
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+            //x+i*y, x-i*y, x, or i*y
+            Complex c = new Complex(1,2);
+            assertTrue("1.0+i*2.0".equals(c.toString()));
+            c = new Complex(0,2);
+            assertTrue("i*2.0".equals(c.toString()));
+            c = new Complex(1,-2);
+            assertTrue("1.0-i*2.0".equals(c.toString()));
+            c = new Complex(0,2);
+            assertTrue("i*2.0".equals(c.toString()));
 	}
 
 }
