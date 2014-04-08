@@ -1,4 +1,4 @@
-package annas.test.graph;
+package annas.graph;
 
 import annas.graph.GraphEvent;
 import annas.graph.GraphObserver;

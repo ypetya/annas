@@ -1,6 +1,5 @@
-package annas.test.graph;
+package annas.graph;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Iterator;
@@ -13,9 +12,9 @@ import annas.graph.DefaultArc;
 import annas.graph.DefaultWeight;
 import annas.graph.GraphInterface;
 import annas.graph.UndirectedGraph;
-import annas.graph.util.traversal.BreadthFirst;
+import annas.graph.util.traversal.DepthFirst;
 
-public class TestBFTraversal {
+public class TestDFTraversal {
 
 	private GraphInterface<String, DefaultArc<String>> graph;
 
@@ -27,7 +26,7 @@ public class TestBFTraversal {
 	private String f;
 	private String g;
 
-	private BreadthFirst<String, DefaultArc<String>> traversal;
+	private DepthFirst<String, DefaultArc<String>> traversal;
 
 	@Before
 	public void setUp() throws Exception {
@@ -56,8 +55,7 @@ public class TestBFTraversal {
 		this.graph.addArc(c, f, new DefaultWeight(1d));
 		this.graph.addArc(c, g, new DefaultWeight(1d));
 
-		this.traversal = new BreadthFirst<String, DefaultArc<String>>(
-				this.graph);
+		this.traversal = new DepthFirst<String, DefaultArc<String>>(this.graph);
 	}
 
 	@After
@@ -70,9 +68,9 @@ public class TestBFTraversal {
 
 		assertTrue(i.next() == a);
 		assertTrue(i.next() == b);
-		assertTrue(i.next() == c);
 		assertTrue(i.next() == d);
 		assertTrue(i.next() == e);
+		assertTrue(i.next() == c);
 		assertTrue(i.next() == f);
 		assertTrue(i.next() == g);
 	}
@@ -83,25 +81,8 @@ public class TestBFTraversal {
 
 		assertTrue(i.next() == a);
 		assertTrue(i.next() == b);
-		assertTrue(i.next() == c);
 		assertTrue(i.next() == d);
 		assertTrue(i.next() == e);
-	}
-
-	@Test
-	public void testIsBipartite() {
-		Iterator<String> i = this.traversal.run(a);
-
-		assertTrue(this.traversal.isBipartite());
-
-		this.graph.addArc(b, c, new DefaultWeight(1d));
-
-		this.traversal = new BreadthFirst<String, DefaultArc<String>>(
-				this.graph);
-
-		this.traversal.run(a);
-		assertFalse(this.traversal.isBipartite());
-
 	}
 
 }

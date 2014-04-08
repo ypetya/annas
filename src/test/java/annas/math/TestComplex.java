@@ -1,4 +1,4 @@
-package annas.test.math;
+package annas.math;
 
 
 import static org.junit.Assert.assertTrue;

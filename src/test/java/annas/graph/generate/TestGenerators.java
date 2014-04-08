@@ -1,4 +1,4 @@
-package annas.test.graph.generate;
+package annas.graph.generate;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -17,7 +17,7 @@ import annas.graph.generate.LinearGraphGenerator;
 import annas.graph.generate.RingGraphGenerator;
 import annas.graph.generate.StarGraphGenerator;
 import annas.graph.generate.WheelGraphGenerator;
-import annas.test.graph.DefaultNodeFactory;
+import annas.graph.DefaultNodeFactory;
 
 public class TestGenerators {
 

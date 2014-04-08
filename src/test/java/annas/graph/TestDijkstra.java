@@ -1,4 +1,4 @@
-package annas.test.graph;
+package annas.graph;
 
 
 import static org.junit.Assert.assertTrue;
