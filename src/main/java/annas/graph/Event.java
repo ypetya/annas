@@ -13,7 +13,7 @@ public enum Event {
 	Node_Added,
 	
 	/**
-	 * Indicates a Node has been removed to the Graph
+	 * Indicates a Node has been removed from the Graph
 	 */
 	Node_Removed,
 	
@@ -24,7 +24,7 @@ public enum Event {
 	Arc_Added,
 	
 	/**
-	 * Indicates a Arc has been removed to the Graph
+	 * Indicates a Arc has been removed from the Graph
 	 */
 	Arc_Removed,
 	
